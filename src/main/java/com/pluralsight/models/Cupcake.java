@@ -25,8 +25,12 @@ public class Cupcake extends MenuItem {
         this.basePrice = basePrice;
     }
 
+    @Override
+    // should return "Mini Strawberry Cupcake"
+    public void getName() {}
+    //should return "$2.00"
+    public void getPrice() {}
+    // should return...
     public void getDetails() {}
-    public String getCakeFlavor() {
-        return cakeFlavor;
-    }
+
 }
