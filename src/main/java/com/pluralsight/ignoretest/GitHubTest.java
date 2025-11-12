@@ -1,4 +1,4 @@
-package com.pluralsight.test;
+package com.pluralsight.ignoretest;
 
 public class GitHubTest {
 
