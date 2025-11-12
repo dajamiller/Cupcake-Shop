@@ -16,7 +16,7 @@ public class Cupcake extends MenuItem {
 
     // constructor to initialize variables
 
-    public Cupcake(String cakeFlavor, String size, String frostingFlavor, List<String> toppings, SpecialOption decoration, double basePrice) {
+    public Cupcake() {
         this.cakeFlavor = cakeFlavor;
         this.size = size;
         this.frostingFlavor = frostingFlavor;
