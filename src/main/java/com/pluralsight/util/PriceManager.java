@@ -32,5 +32,5 @@ public class PriceManager {
         }
     }
 
-    public Cupcake.getItemPrice() {}
+    //public Cupcake.getItemPrice() {}
 }
