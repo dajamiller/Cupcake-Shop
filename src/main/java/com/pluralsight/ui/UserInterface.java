@@ -6,14 +6,13 @@ import com.pluralsight.models.Drink;
 import java.util.Scanner;
 
 public class UserInterface {
-    //declare scanner
-    Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        //declare scanner
+        Scanner scanner = new Scanner(System.in);
 
-    //constructor
-
-
-
-    public void display() {}
+        //constructor
 
 
+        //public void display() {}
+    }
 }
