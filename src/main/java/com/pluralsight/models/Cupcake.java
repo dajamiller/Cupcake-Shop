@@ -1,8 +1,10 @@
 package com.pluralsight.models;
 
+import com.pluralsight.util.PriceManager;
+
 import java.util.List;
 
-public class Cupcake extends MenuItem {
+public class Cupcake implements MenuItem {
 
     //encapsulation
 
@@ -44,7 +46,9 @@ public class Cupcake extends MenuItem {
     }
     //should return "$2.00"
     public double getPrice() {
-        //double price = this.basePrice;
+
+        PriceManager.getItemPrice(size);
+
         return basePrice; // (must also add cost of premium toppings, special option, etc.., needs to connect to menu?
     }
     // should return...
@@ -58,7 +62,7 @@ public class Cupcake extends MenuItem {
                 details += currentTopping;
             }
         }
-        for (String topping : toppings) {
+        for(String topping : toppings) {
 
         }
         return size + " " +  cake + " Cupcake with " + frosting + " Frosting and " +toppings + " on top" ;

@@ -1,6 +1,6 @@
 package com.pluralsight.models;
 
-public class Drink extends MenuItem {
+public class Drink implements MenuItem {
 
     private String name;
     private String size;

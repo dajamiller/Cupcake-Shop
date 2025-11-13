@@ -1,20 +1,13 @@
 package com.pluralsight.models;
 
-public abstract class MenuItem {
+public interface MenuItem {
 
+    public String getName();
 
-    public String getName() {
-       // return size + " " + cakeFlavor + " Cupcake";
-        return null;
-    }
     //public void getDescription() {}// may not need
-    public double getPrice() {
-        return 0;
-    }
-    public String getDetails() {
-        return null;
-    }
+    public double getPrice();
+
+    public String getDetails();
     //public void getImage() {} // not needed
-
-
 }
+
