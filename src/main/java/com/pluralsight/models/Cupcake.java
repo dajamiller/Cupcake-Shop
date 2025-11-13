@@ -45,27 +45,41 @@ public class Cupcake implements MenuItem {
         return size + " " + cake + " Cupcake";
     }
     //should return "$2.00"
+    @Override
     public double getPrice() {
 
-        PriceManager.getItemPrice(size);
+        double totalCupcakePrice = PriceManager.getBasePrice(this.size);
 
-        return basePrice; // (must also add cost of premium toppings, special option, etc.., needs to connect to menu?
+        totalCupcakePrice += this.decoration.getPrice();
+
+        double toppingCost = 0.00;
+        for (String topping : toppings) {
+            toppingCost += PriceManager.getPremiumToppingPrice(this.size);
+        }
+        totalCupcakePrice += toppingCost;
+
+        return totalCupcakePrice;
     }
     // should return...
+    @Override
     public String getDetails() {
-        String details = size + " " +  cake + " Cupcake with " + frosting + " Frosting and " + toppings + " on top" ;
+
+        String details = this.size + " " + this.cake + " Cupcake with " + this.frosting + " Frosting";
+
+//        details += "with " + this.toppings + " on top!";
+
         if (this.toppings.isEmpty()) {
-            details += "No toppings";
+            details += " nothing on top.";
         } else {
             for (int i = 0; i < toppings.size(); i++) {
-                String currentTopping = toppings.get(i);
-                details += currentTopping;
+                details += this.toppings.get(i);
+                if (i < this.toppings.size() - 1) {
+                    details += ", ";
+                }
             }
         }
-        for(String topping : toppings) {
-
-        }
-        return size + " " +  cake + " Cupcake with " + frosting + " Frosting and " +toppings + " on top" ;
+        details += " With a " + this.decoration.getName();
+        return details;
     }
 
 }
