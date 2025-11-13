@@ -7,22 +7,32 @@ public class Cupcake extends MenuItem {
     //encapsulation
 
     //instance variables
-    private String cakeFlavor;
+    private String cake;
     private String size;
-    private String frostingFlavor;
+    private String frosting;
     private List<String> toppings;
     private SpecialOption decoration;// bonus
     private double basePrice;
 
     // constructor to initialize variables
 
-    public Cupcake() {
-        this.cakeFlavor = cakeFlavor;
+//    public Cupcake() {
+//        this.cake = cake;
+//        this.size = size;
+//        this.frosting = frosting;
+//        this.toppings = toppings;
+//        this.decoration = decoration;
+//        this.basePrice = basePrice;
+//    }
+
+    public Cupcake(String cake, String size, String frosting, List<String> toppings, SpecialOption decoration, double basePrice) {
+        this.cake = cake;
         this.size = size;
-        this.frostingFlavor = frostingFlavor;
+        this.frosting = frosting;
         this.toppings = toppings;
         this.decoration = decoration;
         this.basePrice = basePrice;
+        //super();
     }
 
     // derived getters - combine multiple variables, creates new value that isnt stored as an instance variable
@@ -30,16 +40,16 @@ public class Cupcake extends MenuItem {
     @Override
     // should return "Mini Strawberry Cupcake"
     public String getName() {
-        return size + " " + cakeFlavor + "Cupcake";
+        return size + " " + cake + " Cupcake";
     }
     //should return "$2.00"
     public double getPrice() {
-        double price = this.basePrice;
-        return price; // (must also add cost of premium toppings, special option, etc.., needs to connect to menu?
+        //double price = this.basePrice;
+        return basePrice; // (must also add cost of premium toppings, special option, etc.., needs to connect to menu?
     }
     // should return...
     public String getDetails() {
-        String details = size + cakeFlavor + " Cupcake with " + frostingFlavor + " Frosting and " + toppings + " on top" ;
+        String details = size + " " +  cake + " Cupcake with " + frosting + " Frosting and " + toppings + " on top" ;
         if (this.toppings.isEmpty()) {
             details += "No toppings";
         } else {
@@ -51,7 +61,7 @@ public class Cupcake extends MenuItem {
         for (String topping : toppings) {
 
         }
-        return size + cakeFlavor + " Cupcake with " + frostingFlavor + " Frosting and " +toppings + " on top" ;
+        return size + " " +  cake + " Cupcake with " + frosting + " Frosting and " +toppings + " on top" ;
     }
 
 }
