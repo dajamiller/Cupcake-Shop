@@ -31,4 +31,6 @@ public class PriceManager {
             return 0.00;
         }
     }
+
+    public Cupcake.getItemPrice() {}
 }
