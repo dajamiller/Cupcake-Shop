@@ -82,4 +82,51 @@ public class Cupcake implements MenuItem {
         return details;
     }
 
+    public String getCake() {
+        return cake;
+    }
+
+    public void setCake(String cake) {
+        this.cake = cake;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public String getFrosting() {
+        return frosting;
+    }
+
+    public void setFrosting(String frosting) {
+        this.frosting = frosting;
+    }
+
+    public List<String> getToppings() {
+        return toppings;
+    }
+
+    public void setToppings(List<String> toppings) {
+        this.toppings = toppings;
+    }
+
+    public SpecialOption getDecoration() {
+        return decoration;
+    }
+
+    public void setDecoration(SpecialOption decoration) {
+        this.decoration = decoration;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
+    }
 }
