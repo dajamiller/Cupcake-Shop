@@ -99,9 +99,9 @@ public class UserInterface {
         //boolean isSizing = true;
         while (chosenSize == null) {
             System.out.println("What size? ");
-            System.out.println("1) Mini");
-            System.out.println("2) Regular");
-            System.out.println("3) Jumbo");
+            System.out.println("1) Mini ($2)");
+            System.out.println("2) Regular ($3.50)");
+            System.out.println("3) Jumbo ($5)");
             System.out.println("0) Exit\n");
             System.out.print("Enter your choice: ");
 
@@ -202,14 +202,14 @@ public class UserInterface {
 
         while (choosingToppings) {
 
-            System.out.println("\nPick a frosting flavor: ");
+            System.out.println("\nChoose your toppings: Premium is extra (mini- $0.50, reg- $0.75, jumbo- $1.00)");
             System.out.println("1) Strawberry");
             System.out.println("2) Cherry");
             System.out.println("3) Rainbow Sprinkles");
             System.out.println("4) Chocolate Sprinkles");
-            System.out.println("5) Premium: Dubai Chocolate");
-            System.out.println("6) Premium: Candy Bar");
-            System.out.println("7) Premium: Silver Sprinkles ");
+            System.out.println("5) Premium: Dubai Chocolate (+$)");
+            System.out.println("6) Premium: Candy Bar (+$)");
+            System.out.println("7) Premium: Silver Sprinkles (+$)");
             System.out.println("8) Done");
 
             System.out.println("0) Exit\n");
@@ -253,11 +253,10 @@ public class UserInterface {
                 }
                 case "0" -> {
                     System.out.println("Maybe next time...\nThank you for using Daisy's Cupcakery!\n");
-                    showOrderMenu();
+                    return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 258)\n");
-                    return;
+                    System.out.println("Invalid choice, try again (line 259)\n");
                 }
             }
             if (toppingName != null) {
@@ -269,7 +268,7 @@ public class UserInterface {
         //while (chosenPremium == null) {}
 
         while (chosenDecor == null) {
-            System.out.println("\nWould you like a to add a special topper?");
+            System.out.println("\nWould you like a to add a special topper for +$1 more");
             System.out.println("1) No, thanks");
             System.out.println("2) Add Birthday Topper");
             System.out.println("3) Add Graduation Topper");
@@ -297,6 +296,7 @@ public class UserInterface {
                 }
                 case "5" -> {
                     System.out.println("Seasonal Holiday Topper added!");
+                    chosenDecor = "Seasonal Holiday Topper";
                 }
                 case "0" -> {
                     System.out.println("Cupcake cancelled.");
@@ -325,9 +325,9 @@ public class UserInterface {
         while (drinkName == null) {
 
             System.out.println("\nWhat would you like to drink?");
-            System.out.println("1) Water");
-            System.out.println("2) Tea");
-            System.out.println("3) Milk");
+            System.out.println("1) Water (+$1)");
+            System.out.println("2) Tea (+$2)");
+            System.out.println("3) Milk (+$3)");
             System.out.println("0)Cancel Drink\n");
 
             String drinkChoice = scanner.nextLine().trim();
@@ -409,7 +409,7 @@ public class UserInterface {
             System.out.println("Item: " + item.getName());
             System.out.println(item.getDetails());
             System.out.printf("Price: $%.2f\n", item.getPrice());
-            System.out.println("---");
+            System.out.println("------------------------------------");
         }
 
         double subtotal = activeOrder.calculateTotalPrice();

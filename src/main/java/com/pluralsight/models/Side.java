@@ -22,7 +22,7 @@ public class Side implements MenuItem {
 
     @Override
     public String getDetails() {
-        return this.name + " $" + this.price;
+        return this.name;
     }
 
 }

@@ -18,15 +18,6 @@ public class Cupcake implements MenuItem {
 
     // constructor to initialize variables
 
-//    public Cupcake() {
-//        this.cake = cake;
-//        this.size = size;
-//        this.frosting = frosting;
-//        this.toppings = toppings;
-//        this.decoration = decoration;
-//        this.basePrice = basePrice;
-//    }
-
     public Cupcake(String cake, String size, String frosting, List<String> toppings, SpecialOption decoration, double basePrice) {
         this.cake = cake;
         this.size = size;
@@ -44,6 +35,7 @@ public class Cupcake implements MenuItem {
     public String getName() {
         return size + " " + cake + " Cupcake";
     }
+
     //should return "$2.00"
     @Override
     public double getPrice() {
@@ -52,81 +44,38 @@ public class Cupcake implements MenuItem {
 
         totalCupcakePrice += this.decoration.getPrice();
 
-        double toppingCost = 0.00;
-        for (String topping : toppings) {
-            toppingCost += PriceManager.getPremiumToppingPrice(this.size);
+        for (String topping : this.toppings) {
+            if (topping.toLowerCase().contains("premium")) {
+                totalCupcakePrice += PriceManager.getPremiumToppingPrice(this.size);
+            }
         }
-        totalCupcakePrice += toppingCost;
-
         return totalCupcakePrice;
     }
+
     // should return...
     @Override
     public String getDetails() {
 
-        String details = this.size + " " + this.cake + " Cupcake with " + this.frosting + " Frosting";
+        String details = this.size + " " + this.cake + " Cupcake with " + this.frosting + " Frosting\n";
 
-//        details += "with " + this.toppings + " on top!";
 
         if (this.toppings.isEmpty()) {
-            details += " nothing on top.";
+            details += " with no toppings, ";
         } else {
+            details += "(Toppings: ";
             for (int i = 0; i < toppings.size(); i++) {
                 details += this.toppings.get(i);
                 if (i < this.toppings.size() - 1) {
                     details += ", ";
                 }
             }
+            details += ")";
+
+            if (!this.decoration.getName().equalsIgnoreCase("none")) {
+                details += "\nWith a " + this.decoration.getName();
+            }
+
         }
-        details += " With a " + this.decoration.getName();
         return details;
-    }
-
-    public String getCake() {
-        return cake;
-    }
-
-    public void setCake(String cake) {
-        this.cake = cake;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public String getFrosting() {
-        return frosting;
-    }
-
-    public void setFrosting(String frosting) {
-        this.frosting = frosting;
-    }
-
-    public List<String> getToppings() {
-        return toppings;
-    }
-
-    public void setToppings(List<String> toppings) {
-        this.toppings = toppings;
-    }
-
-    public SpecialOption getDecoration() {
-        return decoration;
-    }
-
-    public void setDecoration(SpecialOption decoration) {
-        this.decoration = decoration;
-    }
-
-    public double getBasePrice() {
-        return basePrice;
-    }
-
-    public void setBasePrice(double basePrice) {
-        this.basePrice = basePrice;
     }
 }

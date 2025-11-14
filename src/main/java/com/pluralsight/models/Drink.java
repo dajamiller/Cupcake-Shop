@@ -15,10 +15,10 @@ public class Drink implements MenuItem {
         return name;
     }
     public double getPrice() {
-        return 0;
+        return price;
     }
     public String getDetails() {
-        return name + " $" + price;
+        return name;
     }
 
 }

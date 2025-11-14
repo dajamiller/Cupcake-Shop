@@ -65,20 +65,6 @@ public class PriceManager {
 
     }
 
-//    public static double getSpecialPrices(String size) {
-//        double[] specialPrice = SPECIAL_PRICES;
-//
-//        if (size.equalsIgnoreCase("mini")) {
-//            return specialPrice[0];
-//        } else if (size.equalsIgnoreCase("regular")) {
-//            return specialPrice[1];
-//        } else if (size.equalsIgnoreCase("jumbo")) {
-//            return specialPrice[2];
-//        } else {
-//            System.out.println("Invalid input, try again (line 77)");
-//            return 0.00;
-//        }
-//    }
 
     public static double getDrinkPrice(String name) {
 
@@ -106,7 +92,7 @@ public class PriceManager {
     };
     private static final double[] SIDE_PRICES = {
             1.50, // Price for Cookie
-            1.00  // Price for Candy
+            1.00,  // Price for Candy
     };
 
     public static double getSidePrice(String name) {
