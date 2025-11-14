@@ -62,15 +62,10 @@ public class UserInterface {
 
             String choice2 = scanner.nextLine().trim();
             switch (choice2) {
-                case "1" -> {
-                    addCupcake();
-                }
-                case "2" -> {
-                    addDrink();
-                }
-                case "3" -> {
-                    addSide();
-                }
+                case "1" -> addCupcake();
+
+                case "2" -> addDrink();
+                case "3" -> addSide();
                 case "4" -> {
                     System.out.println("Ready to checkout? Let's go!");
                     checkout();
