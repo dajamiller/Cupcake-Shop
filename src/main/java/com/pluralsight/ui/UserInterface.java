@@ -1,7 +1,10 @@
 package com.pluralsight.ui;
 
+import com.pluralsight.models.Drink;
 import com.pluralsight.models.MenuItem;
 import com.pluralsight.models.Order;
+import com.pluralsight.models.Side;
+import com.pluralsight.util.PriceManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -120,11 +123,10 @@ public class UserInterface {
                 }
                 case "0" -> {
                     System.out.println("Canceled. Maybe next time...\nThank you for coming to Daisy's Cupcakery!\n");
-                    showOrderMenu();
+                    return;
                 }
                 default -> {
                     System.out.println("Invalid choice, try again (line 100)\n");
-                    return;
                 }
             }
         }
@@ -157,11 +159,10 @@ public class UserInterface {
                 }
                 case "0" -> {
                     System.out.println("Maybe next time...\nThank you for using Daisy's Cupcakery!\n");
-                    showOrderMenu();
+                    return;
                 }
                 default -> {
                     System.out.println("Invalid choice, try again (line 157)\n");
-                    return;
                 }
             }
         }
@@ -192,11 +193,10 @@ public class UserInterface {
                 }
                 case "0" -> {
                     System.out.println("Maybe next time...\nThank you for using Daisy's Cupcakery!\n");
-                    showOrderMenu();
+                    return;
                 }
                 default -> {
                     System.out.println("Invalid choice, try again (line 157)\n");
-                    return;
                 }
             }
         }
@@ -301,11 +301,10 @@ public class UserInterface {
                 }
                 case "0" -> {
                     System.out.println("Cupcake cancelled.");
-                    showOrderMenu();
+                    return;
                 }
                 default -> {
                     System.out.println("Invalid choice, try again (line 307)\n");
-                    return;
                 }
             }
         }
@@ -336,18 +335,53 @@ public class UserInterface {
                 }
                 case "0" -> {
                     System.out.println("Drink cancelled.");
-                    showOrderMenu();
+                    return;
                 }
                 default -> {
                     System.out.println("Invalid choice, try again (line 340)\n");
-                    return;
                 }
             }
         }
+        double price = PriceManager.getDrinkPrice(drinkName);
+
+        Drink newDrink = new Drink(drinkName, price);
+
+        activeOrder.addItem(newDrink);
+
+        System.out.println(newDrink.getName() + " added to your order!");
 
     }
 
-    private void addSide() {}
+    private void addSide() {
+        System.out.println("\n--- Add Side Item ---");
+        System.out.println("1) Cookie");
+        System.out.println("2) Candy");
+        System.out.println("0) Cancel Side");
+        System.out.print("Enter choice: ");
+
+        String sideChoice = scanner.nextLine().trim();
+        String sideName = null;
+
+        if (sideChoice.equals("1")) {
+            sideName = "Cookie";
+        } else if (sideChoice.equals("2")) {
+            sideName = "Candy";
+        } else if (sideChoice.equals("0")) {
+            System.out.println("Side Cancelled. Returning to menu.");
+            return;
+        } else {
+            System.out.println("Invalid choice. Returning to menu.");
+            return;
+        }
+
+        double sidePrice = PriceManager.getSidePrice(sideName);
+
+        Side newSide = new Side(sideName, sidePrice);
+
+        activeOrder.addItem(newSide);
+
+        System.out.println("✅ " + sideName + " added to order!");
+    }
 
     private void checkout() {
 

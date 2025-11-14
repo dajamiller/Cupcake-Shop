@@ -100,6 +100,26 @@ public class PriceManager {
         DECORATION_PRICE = decorationPrice;
     }
 
+    private static final String[] SIDE_NAMES = {
+            "Cookie",
+            "Candy"
+    };
+    private static final double[] SIDE_PRICES = {
+            1.50, // Price for Cookie
+            1.00  // Price for Candy
+    };
+
+    public static double getSidePrice(String name) {
+        // Loop through the parallel arrays to find the price by name
+        for (int i = 0; i < SIDE_NAMES.length; i++) {
+            if (name.equalsIgnoreCase(SIDE_NAMES[i])) {
+                return SIDE_PRICES[i];
+            }
+        }
+        System.out.println("Error: Invalid side name: " + name);
+        return 0.00;
+    }
+
 
     //public Cupcake.getItemPrice() {}
 
