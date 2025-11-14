@@ -2,7 +2,6 @@ package com.pluralsight.util;
 
 import com.pluralsight.models.Order;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -11,7 +10,8 @@ public class ReceiptWriter {
 
     //private constructor
 
-    public static String getReceiptFile() {
+    public static String getReceiptFileName() {
+
         LocalDateTime rightNow = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
         String fileNameDate = rightNow.format(formatter);
@@ -21,7 +21,8 @@ public class ReceiptWriter {
     }
 
     public static void writeReceipt(Order order) throws java.io.IOException {
-        // will code logic + filename later
+        String filename = getReceiptFileName();
+        System.out.println("Receipt saved to: " + filename);
     }
-
 }
+

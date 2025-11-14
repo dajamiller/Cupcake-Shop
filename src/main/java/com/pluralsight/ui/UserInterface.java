@@ -1,11 +1,10 @@
 package com.pluralsight.ui;
 
-import com.pluralsight.models.Drink;
-import com.pluralsight.models.MenuItem;
-import com.pluralsight.models.Order;
-import com.pluralsight.models.Side;
-import com.pluralsight.util.PriceManager;
+import com.pluralsight.models.*;
+        import com.pluralsight.util.PriceManager;
+import com.pluralsight.util.ReceiptWriter;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -22,7 +21,7 @@ public class UserInterface {
         this.activeOrder = null;
     }
 
-    public void showHomeScreen() {
+    public void showHomeScreen()  {
         boolean isActive = true;
         while (isActive) {
             System.out.println("\n\uD83E\uDDC1 Welcome to Daisy's Cupcakery \uD83E\uDDC1 \n");
@@ -93,7 +92,7 @@ public class UserInterface {
         String chosenFrosting= null;
         List<String> chosenToppings = new ArrayList<>();
         boolean choosingToppings =  true;
-       // String chosenPremium = null;// will have premium  detected to add price
+        // String chosenPremium = null;// will have premium  detected to add price
         String chosenDecor = null;
 
 
@@ -308,6 +307,16 @@ public class UserInterface {
                 }
             }
         }
+        double decorPrice = chosenDecor.equalsIgnoreCase("none") ? 0.0 :
+                PriceManager.getDecorationPrice();
+
+        SpecialOption decoration = new SpecialOption(chosenDecor, decorPrice);
+
+        Cupcake newCupcake = new Cupcake(chosenCake, chosenSize, chosenFrosting, chosenToppings, decoration, 0.0);
+
+        activeOrder.addItem(newCupcake);
+
+        System.out.println(newCupcake.getName() + " added to your order!");
     }
 
     private void addDrink() {
@@ -367,10 +376,10 @@ public class UserInterface {
         } else if (sideChoice.equals("2")) {
             sideName = "Candy";
         } else if (sideChoice.equals("0")) {
-            System.out.println("Side Cancelled. Returning to menu.");
+            System.out.println("Side Cancelled.");
             return;
         } else {
-            System.out.println("Invalid choice. Returning to menu.");
+            System.out.println("Invalid choice.");
             return;
         }
 
@@ -380,10 +389,10 @@ public class UserInterface {
 
         activeOrder.addItem(newSide);
 
-        System.out.println("✅ " + sideName + " added to order!");
+        System.out.println(sideName + " added to order!");
     }
 
-    private void checkout() {
+    private void checkout()  {
 
         if (activeOrder.getMenuItems().isEmpty()) {
             System.out.println("~~~Order Empty!~~~\n");
@@ -419,16 +428,11 @@ public class UserInterface {
         String confirmation = scanner.nextLine().trim();
 
         if (confirmation.equalsIgnoreCase("Y")) {
-
+            ReceiptWriter.writeReceipt(activeOrder);
             System.out.println("Order confirmed!");
         } else {
-            System.out.println("Order not confirmed, try again (line 127)");
+            System.out.println("Order not confirmed, try again");
         }
-    }
-
-    public static void main(String[] args) {
-        UserInterface userInterface = new UserInterface();
-        userInterface.showHomeScreen();
     }
 
 
