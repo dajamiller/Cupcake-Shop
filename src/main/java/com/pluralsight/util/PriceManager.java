@@ -18,8 +18,6 @@ public class PriceManager {
             1.00,
     };
 
-
-
     private static double[] DRINK_PRICES = {
             1.00,
             2.00,
@@ -30,7 +28,6 @@ public class PriceManager {
             "Tea",
             "Milk"
     };
-
 
     // connects item base price to size name
     public static double getBasePrice(String size) {
@@ -82,17 +79,13 @@ public class PriceManager {
         return DECORATION_PRICE;
     }
 
-    public static void setDecorationPrice(double decorationPrice) {
-        DECORATION_PRICE = decorationPrice;
-    }
-
     private static final String[] SIDE_NAMES = {
             "Cookie",
             "Candy"
     };
     private static final double[] SIDE_PRICES = {
-            1.50, // Price for Cookie
-            1.00,  // Price for Candy
+            1.50,//cookie
+            1.00,// candy
     };
 
     public static double getSidePrice(String name) {

@@ -1,10 +1,8 @@
 package com.pluralsight.ui;
 
 import com.pluralsight.models.*;
-        import com.pluralsight.util.PriceManager;
+import com.pluralsight.util.PriceManager;
 import com.pluralsight.util.ReceiptWriter;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,7 +23,7 @@ public class UserInterface {
         boolean isActive = true;
         while (isActive) {
             System.out.println("\n\uD83E\uDDC1 Welcome to Daisy's Cupcakery \uD83E\uDDC1 \n");
-            System.out.println("What would you like to do?");
+            System.out.println("\nWhat would you like to do?");
             System.out.println("1) Place a new order");
             System.out.println("0) Exit\n");
             System.out.print("Enter your choice: ");
@@ -37,7 +35,7 @@ public class UserInterface {
                     System.out.println("Thank you for coming to Daisy's Cupcakery!\n");
                     isActive = false;
                 }
-                default -> System.out.println("Invalid choice, try again (line 36)\n");
+                default -> System.out.println("Invalid choice, try again (line 38)\n");
 
             }
         }
@@ -57,7 +55,7 @@ public class UserInterface {
     public void showOrderMenu () {
         boolean isOrdering = true;
         while (isOrdering) {
-            System.out.println("What would you like to do?");
+            System.out.println("\nWhat would you like to do?");
             System.out.println("1) Order a Cupcake");
             System.out.println("2) Order a Drink");
             System.out.println("3) Order a Side");
@@ -80,7 +78,7 @@ public class UserInterface {
                     System.out.println("Order Canceled\nThank you for coming to Daisy's Cupcakery!\n");
                     isOrdering = false;
                 }
-                default -> System.out.println("Invalid choice, try again (line 66)\n");
+                default -> System.out.println("Invalid choice, try again (line 81)\n");
 
             }
         }
@@ -98,7 +96,7 @@ public class UserInterface {
 
         //boolean isSizing = true;
         while (chosenSize == null) {
-            System.out.println("What size? ");
+            System.out.println("\nWhat size? ");
             System.out.println("1) Mini ($2)");
             System.out.println("2) Regular ($3.50)");
             System.out.println("3) Jumbo ($5)");
@@ -125,7 +123,7 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 100)\n");
+                    System.out.println("Invalid choice, try again (line 126)\n");
                 }
             }
         }
@@ -161,7 +159,7 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 157)\n");
+                    System.out.println("Invalid choice, try again (line 162)\n");
                 }
             }
         }
@@ -195,14 +193,14 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 157)\n");
+                    System.out.println("Invalid choice, try again (line 196)\n");
                 }
             }
         }
 
         while (choosingToppings) {
 
-            System.out.println("\nChoose your toppings: Premium is extra (mini- $0.50, reg- $0.75, jumbo- $1.00)");
+            System.out.println("\n~~~Add Toppings:~~~ \nPremium toppings cost extra (mini- $0.50, reg- $0.75, jumbo- $1.00)");
             System.out.println("1) Strawberry");
             System.out.println("2) Cherry");
             System.out.println("3) Rainbow Sprinkles");
@@ -221,31 +219,24 @@ public class UserInterface {
 
             switch (toppingChoice) {
                 case "1" -> {
-                    //System.out.println("Strawberry added");
                     toppingName = "Strawberry";
                 }
                 case "2" -> {
-                    //System.out.println("Cherry added");
                     toppingName = "Cherry";
                 }
                 case "3" -> {
-                    //System.out.println("Rainbow Sprinkles added");
                     toppingName = "Rainbow Sprinkles";
                 }
                 case "4" -> {
-                    //System.out.println("Chocolate Sprinkles added");
                     toppingName = "Chocolate Sprinkles";
                 }
                 case "5" -> {
-                    //System.out.println("Dubai Chocolate added");
                     toppingName = "Premium Dubai Chocolate";
                 }
                 case "6" -> {
-                    //System.out.println("Candy Bar added");
                     toppingName = "Premium Candy Bar";
                 }
                 case "7" -> {
-                    //System.out.println("Silver Sprinkles added");
                     toppingName = "Premium Silver Sprinkles";
                 }
                 case "8" -> {
@@ -256,7 +247,7 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 259)\n");
+                    System.out.println("Invalid choice, try again (line 250)\n");
                 }
             }
             if (toppingName != null) {
@@ -265,10 +256,8 @@ public class UserInterface {
             }
         }
 
-        //while (chosenPremium == null) {}
-
         while (chosenDecor == null) {
-            System.out.println("\nWould you like a to add a special topper for +$1 more");
+            System.out.println("\n~~~Add Decoration (+$1)~~~");
             System.out.println("1) No, thanks");
             System.out.println("2) Add Birthday Topper");
             System.out.println("3) Add Graduation Topper");
@@ -303,7 +292,7 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 307)\n");
+                    System.out.println("Invalid choice, try again (line 295)\n");
                 }
             }
         }
@@ -324,7 +313,7 @@ public class UserInterface {
 
         while (drinkName == null) {
 
-            System.out.println("\nWhat would you like to drink?");
+            System.out.println("\n~~~Add Drink:~~~");
             System.out.println("1) Water (+$1)");
             System.out.println("2) Tea (+$2)");
             System.out.println("3) Milk (+$3)");
@@ -347,7 +336,7 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 340)\n");
+                    System.out.println("Invalid choice, try again (line 339)\n");
                 }
             }
         }
@@ -362,7 +351,7 @@ public class UserInterface {
     }
 
     private void addSide() {
-        System.out.println("\n--- Add Side Item ---");
+        System.out.println("\n~~~Add Side Item:~~~");
         System.out.println("1) Cookie");
         System.out.println("2) Candy");
         System.out.println("0) Cancel Side");
@@ -379,7 +368,7 @@ public class UserInterface {
             System.out.println("Side Cancelled.");
             return;
         } else {
-            System.out.println("Invalid choice.");
+            System.out.println("Invalid choice, try again");
             return;
         }
 

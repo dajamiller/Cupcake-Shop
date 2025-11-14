@@ -25,18 +25,16 @@ public class Cupcake implements MenuItem {
         this.toppings = toppings;
         this.decoration = decoration;
         this.basePrice = basePrice;
-        //super();
     }
 
     // derived getters - combine multiple variables, creates new value that isnt stored as an instance variable
-    // inherited from parent class (MenuItem)
+    // inherited from parent class
     @Override
     // should return "Mini Strawberry Cupcake"
     public String getName() {
         return size + " " + cake + " Cupcake";
     }
 
-    //should return "$2.00"
     @Override
     public double getPrice() {
 
@@ -56,7 +54,7 @@ public class Cupcake implements MenuItem {
     @Override
     public String getDetails() {
 
-        String details = this.size + " " + this.cake + " Cupcake with " + this.frosting + " Frosting\n";
+        String details = this.size + " " + this.cake + " Cupcake\n" + this.frosting + " Frosting\n";
 
 
         if (this.toppings.isEmpty()) {
