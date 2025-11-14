@@ -2,8 +2,8 @@ package com.pluralsight.util;
 
 // utility class - should only have static members
 public class PriceManager {
-    private PriceManager() {
-    }
+
+    private static double DECORATION_PRICE = 1.00;
 
 
     private static double[] BASE_PRICES = {
@@ -18,11 +18,7 @@ public class PriceManager {
             1.00,
     };
 
-    private static double[] SPECIAL_PRICES = {
-            1.00,
-            1.50,
-            2.00,
-    };
+
 
     private static double[] DRINK_PRICES = {
             1.00,
@@ -69,20 +65,20 @@ public class PriceManager {
 
     }
 
-    public static double getSpecialPrices(String size) {
-        double[] specialPrice = SPECIAL_PRICES;
-
-        if (size.equalsIgnoreCase("mini")) {
-            return specialPrice[0];
-        } else if (size.equalsIgnoreCase("regular")) {
-            return specialPrice[1];
-        } else if (size.equalsIgnoreCase("jumbo")) {
-            return specialPrice[2];
-        } else {
-            System.out.println("Invalid input, try again (line 77)");
-            return 0.00;
-        }
-    }
+//    public static double getSpecialPrices(String size) {
+//        double[] specialPrice = SPECIAL_PRICES;
+//
+//        if (size.equalsIgnoreCase("mini")) {
+//            return specialPrice[0];
+//        } else if (size.equalsIgnoreCase("regular")) {
+//            return specialPrice[1];
+//        } else if (size.equalsIgnoreCase("jumbo")) {
+//            return specialPrice[2];
+//        } else {
+//            System.out.println("Invalid input, try again (line 77)");
+//            return 0.00;
+//        }
+//    }
 
     public static double getDrinkPrice(String name) {
 
@@ -96,7 +92,15 @@ public class PriceManager {
         return 0.00;
     }
 
+    public static double getDecorationPrice() {
+        return DECORATION_PRICE;
+    }
 
-        //public Cupcake.getItemPrice() {}
+    public static void setDecorationPrice(double decorationPrice) {
+        DECORATION_PRICE = decorationPrice;
+    }
+
+
+    //public Cupcake.getItemPrice() {}
 
 }
