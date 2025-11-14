@@ -20,7 +20,7 @@ public class ReceiptWriter {
         //
     }
 
-    public static void writeReceipt(Order order) throws java.io.IOException {
+    public static void writeReceipt(Order order) {
         String filename = getReceiptFileName();
         System.out.println("Receipt saved to: " + filename);
     }
