@@ -121,6 +121,4 @@ public class PriceManager {
     }
 
 
-    //public Cupcake.getItemPrice() {}
-
 }

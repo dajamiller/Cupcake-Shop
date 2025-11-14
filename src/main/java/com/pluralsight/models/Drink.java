@@ -21,5 +21,4 @@ public class Drink implements MenuItem {
         return name + " $" + price;
     }
 
-    // should this be 3 separate classes?
 }

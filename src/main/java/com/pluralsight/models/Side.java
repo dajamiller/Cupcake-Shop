@@ -24,4 +24,5 @@ public class Side implements MenuItem {
     public String getDetails() {
         return this.name + " $" + this.price;
     }
+
 }

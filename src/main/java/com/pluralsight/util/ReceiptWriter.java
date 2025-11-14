@@ -17,7 +17,6 @@ public class ReceiptWriter {
         String fileNameDate = rightNow.format(formatter);
         return fileNameDate + ".txt";
 
-        //
     }
 
     public static void writeReceipt(Order order) {

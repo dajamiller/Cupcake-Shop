@@ -45,4 +45,5 @@ public class Order {
     public void setMenuItems(List<MenuItem> menuItems) {
         this.menuItems = menuItems;
     }
+
 }
