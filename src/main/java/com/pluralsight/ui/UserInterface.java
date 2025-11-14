@@ -3,8 +3,6 @@ package com.pluralsight.ui;
 import com.pluralsight.models.*;
         import com.pluralsight.util.PriceManager;
 import com.pluralsight.util.ReceiptWriter;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -37,7 +35,7 @@ public class UserInterface {
                     System.out.println("Thank you for coming to Daisy's Cupcakery!\n");
                     isActive = false;
                 }
-                default -> System.out.println("Invalid choice, try again (line 36)\n");
+                default -> System.out.println("Invalid choice, try again (line 38)\n");
 
             }
         }
@@ -80,7 +78,7 @@ public class UserInterface {
                     System.out.println("Order Canceled\nThank you for coming to Daisy's Cupcakery!\n");
                     isOrdering = false;
                 }
-                default -> System.out.println("Invalid choice, try again (line 66)\n");
+                default -> System.out.println("Invalid choice, try again (line 81)\n");
 
             }
         }
@@ -125,7 +123,7 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 100)\n");
+                    System.out.println("Invalid choice, try again (line 126)\n");
                 }
             }
         }
@@ -161,7 +159,7 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 157)\n");
+                    System.out.println("Invalid choice, try again (line 162)\n");
                 }
             }
         }
@@ -195,7 +193,7 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 157)\n");
+                    System.out.println("Invalid choice, try again (line 196)\n");
                 }
             }
         }
@@ -256,7 +254,7 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 259)\n");
+                    System.out.println("Invalid choice, try again (line 257)\n");
                 }
             }
             if (toppingName != null) {
@@ -303,7 +301,7 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 307)\n");
+                    System.out.println("Invalid choice, try again (line 304)\n");
                 }
             }
         }
@@ -347,7 +345,7 @@ public class UserInterface {
                     return;
                 }
                 default -> {
-                    System.out.println("Invalid choice, try again (line 340)\n");
+                    System.out.println("Invalid choice, try again (line 348)\n");
                 }
             }
         }
@@ -379,7 +377,7 @@ public class UserInterface {
             System.out.println("Side Cancelled.");
             return;
         } else {
-            System.out.println("Invalid choice.");
+            System.out.println("Invalid choice, try again");
             return;
         }
 
