@@ -30,6 +30,8 @@ This is the view of each menu:
 
 ---
 ## 🎥 Behind the Scenes
+
+- [View my initial UML here](https://excalidraw.com/#json=2ANATooBDhht39pB-OhqS,5R3RDXbi96CUVepKnsgUHA)
 <img width="297" height="581" alt="Screenshot 2025-11-14 at 1 24 34 AM" src="https://github.com/user-attachments/assets/e527f0c6-6dbd-4400-a32f-c0056a5b799d" />
 <img width="726" height="875" alt="Screenshot 2025-11-14 at 1 25 02 AM" src="https://github.com/user-attachments/assets/108150dc-8dfc-4817-b4b0-ebbe0eacab7e" />
 <img width="702" height="911" alt="Screenshot 2025-11-14 at 1 25 23 AM" src="https://github.com/user-attachments/assets/82357c55-f3a8-41dc-b366-013fbe90744a" />
