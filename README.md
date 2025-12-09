@@ -41,4 +41,3 @@ This is the view of each menu:
 ## ✨ Code Highlight: Conditional Premium Pricing
 <img width="749" height="336" alt="Screenshot 2025-11-14 at 12 56 36 AM" src="https://github.com/user-attachments/assets/ba19735e-ecf2-447b-bb5c-41e8cd2e4fd6" />
 
-* This is from the Cupcake class - it detects "Premium" in the topping name and implements price by size logic from PriceManager class
