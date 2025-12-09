@@ -1,6 +1,6 @@
 # 🧁 Daisy's Cupcakery (Point-of-Sale System)
 
-### Project Status: Completed (Capstone 2)
+### Project Status: Making Revisions ✏️
 
 This project is a Point-of-Sale (POS) application designed to simplify the ordering process for customers.
 
